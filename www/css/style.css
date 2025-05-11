@@ -1,0 +1,268 @@
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #2E7D32;
+  --accent-color: #81C784;
+  --background-color: #F5F5F5;
+  --text-color: #333333;
+  --text-light: #6c757d;
+  --white: #FFFFFF;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.main-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.image-preview-container {
+  width: 100%;
+  height: 300px;
+  border: 2px dashed var(--accent-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.5rem;
+  background-color: #f8f9fa;
+}
+
+#image-preview {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+#default-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-light);
+}
+
+.preview-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #5a6268;
+}
+
+.btn-success {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-success:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
+#detect-btn {
+  margin-top: 1rem;
+}
+
+#result-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.result-item {
+  margin-bottom: 1.5rem;
+}
+
+.result-item h4 {
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+}
+
+.result-value {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.progress {
+  height: 10px;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+}
+
+.info-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.info-card .card-header {
+  background-color: var(--accent-color);
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+}
+
+.info-card .card-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+#disease-info {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 4px solid var(--primary-color);
+  font-size: 0.95rem;
+}
+
+.camera-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--border-radius);
+  background-color: #000;
+}
+
+#camera-view {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Loading screen */
+#loading-screen {
+  padding: 2rem;
+}
+
+#loading-screen .spinner-border {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .image-preview-container {
+    height: 250px;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
